@@ -1,0 +1,31 @@
+name: Twig Image64
+version: 0.1.0
+description: Base 64 encode image
+icon: plug
+author:
+  name: Paul Massendari
+  email: paul@massendari.com
+homepage: https://github.com/paulmassen/grav-plugin-twig-image64
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/paulmassen/grav-plugin-twig-image64/issues
+docs: https://github.com/paulmassen/grav-plugin-twig-image64/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    text_var:
+      type: text
+      label: Text Variable
+      help: Text to add to the top of a page
