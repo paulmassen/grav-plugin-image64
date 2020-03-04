@@ -46,10 +46,11 @@ class Base64Extension extends \Twig_Extension
         $fullPath = $this->webDir.$path;
         $file = new ImageFile($fullPath, true);
 
-
         $binary = file_get_contents($fullPath);
 
-        return sprintf('data:image/%s;base64,%s', $file->extension(), base64_encode($binary));
+        $split = explode('.', $file);
+        $extension = end($split);
+        return sprintf('data:image/%s;base64,%s', $extension, base64_encode($binary));
     }
 
     /**
